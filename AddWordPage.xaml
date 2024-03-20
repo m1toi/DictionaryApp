@@ -1,0 +1,50 @@
+﻿<Page x:Class="DictionaryApp.AddWordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DictionaryApp" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddWordPage">
+
+    <Grid RenderTransformOrigin="0.489,0.525">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFF002A"/>
+                <GradientStop Color="#FF0E4FFF" Offset="0.902"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Category:" HorizontalAlignment="Left" Margin="79,319,0,0" VerticalAlignment="Top" Width="128" FontFamily="Arial" FontWeight="DemiBold" Height="26"/>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="-97,350,179,0" Height="23">
+            <controls:AutoCompleteBox x:Name="tb" Width="128" Height="23" RenderTransformOrigin="0.5,0.5" >
+
+                <controls:AutoCompleteBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </controls:AutoCompleteBox.RenderTransform>
+            </controls:AutoCompleteBox>
+        </StackPanel>
+
+        <TextBox HorizontalAlignment="Left" Margin="79,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" Height="18" Name="txtWordName" />
+        <Label Content="Dictionary Administration&#xD;&#xA;" HorizontalAlignment="Left" Margin="348,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="385" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial" FontSize="30" Height="79"/>
+        <Label Content="Word Name:" HorizontalAlignment="Left" Margin="79,118,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontWeight="DemiBold" Height="21"/>
+        <Label Content="Word Description:&#x9;" HorizontalAlignment="Left" Margin="79,162,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontWeight="DemiBold" Height="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="79,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="127" Name="txtDescription"/>
+        <Button Content="Select Photo" HorizontalAlignment="Left" Margin="108,362,0,0" VerticalAlignment="Top" Width="100" Name="SelectPhoto" Click="SelectPhoto_Click" Height="20" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="82" Margin="120,174,0,0" VerticalAlignment="Top" Width="136"  Name="SelectedImage" Grid.Column="1"/>
+        <Button Content="Add Word" HorizontalAlignment="Left" Margin="79,420,0,0" VerticalAlignment="Top" Width="198" Name="AddWord" Click="AddWord_Click" Height="20"/>
+        <Border BorderBrush="Black" BorderThickness="3" Margin="55,128,0,186" Grid.Column="1" HorizontalAlignment="Left" Width="206"/>
+
+    </Grid>
+
+</Page>
